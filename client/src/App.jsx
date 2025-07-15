@@ -7,7 +7,6 @@ import { Routes, Route } from "react-router-dom";
 import PrivateRoute from "./components/PrivateRoute";
 
 export default function App() {
-  xdx
   return (
     <>
       <Header />
