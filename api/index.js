@@ -1,23 +1,10 @@
 import e from "express";
-import path from 'path';
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import { fileURLToPath } from 'url';
 import compression from "compression";
 import cookieParser from "cookie-parser";
 import userRoutes from "./routes/user.route.js";
 import authRoutes from "./routes/auth.route.js";
-
-const __dirname = path.dirname(__filename);
-const __filename = fileURLToPath(import.meta.url);
-
-if (process.env.NODE_ENV === 'production') {
-  app.use(e.static(path.join(__dirname, '../client/dist')));
-
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/dist/index.html'));
-  });
-}
 
 dotenv.config();
 
