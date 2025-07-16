@@ -5,7 +5,7 @@ const flowbite = require("flowbite-react/tailwind");
 
 export default {
   content: [
-    "./public/index.html",
+    "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
     flowbite.content(),
   ],
