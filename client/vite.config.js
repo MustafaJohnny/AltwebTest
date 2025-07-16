@@ -6,7 +6,7 @@ export default defineConfig({
   server:{
     proxy:{
       '/api':{
-      target:process.env.URL ?? 'http://localhost:3000',
+      target:'https://altwebtest.onrender.com',
       secure:false,
 
     },
