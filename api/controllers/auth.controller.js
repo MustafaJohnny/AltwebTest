@@ -50,9 +50,9 @@ try {
     const { password: pass, ...rest } = newUser._doc;
 
     res
-      .status(201)
+      .status(200)
       .cookie("access_token", token, {
-        httpOnly: true,
+        httpOnly: true, secure: true, sameSite: 'lax'
       })
       .json(rest);
   } catch (error) {
@@ -87,7 +87,7 @@ export const signin = async (req, res, next) => {
     res
       .status(200)
       .cookie("access_token", token, {
-        httpOnly: true,
+        httpOnly: true, secure: true, sameSite: 'lax'
       })
       .json(rest);
   } catch (error) {
