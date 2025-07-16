@@ -1,4 +1,5 @@
 import e from "express";
+import cors from  'cors'
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import compression from "compression";
@@ -14,8 +15,9 @@ mongoose.connect(process.env.MONGO).then(() => console.log("MongoDb is connected
 const app = e();
 
 app.use(e.json());
-app.use(cookieParser())
+app.use(cors());
 app.use(compression())
+app.use(cookieParser())
 
 app.listen(3000, () => {
   console.log("server is running on port 3000");
