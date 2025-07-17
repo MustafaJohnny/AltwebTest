@@ -49,8 +49,9 @@ export default function SignUp() {
         headers: { Accept: "application/json", "Content-type": "application/json" },
         body: JSON.stringify(formData),
       });
-
+       console.log('response',response)
       const data = await response.json();
+      console.log('data',data)
       if (data.success === false) {
         toast.error(data.message)
         return dispatch(signUpFailure(data.message));
