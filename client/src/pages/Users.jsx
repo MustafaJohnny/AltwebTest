@@ -55,7 +55,7 @@ export default function Users() {
 
   const handleDeleteUser = async () => {
     try {
-      const res = await fetch(`api/user/delete/${userIdToDelete}`, {
+      const res = await fetch(`https://altwebtest.onrender.com/api/user/delete/${userIdToDelete}`, {
         method: "DELETE",
       });
       const data = await res.json();

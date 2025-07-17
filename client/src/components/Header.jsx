@@ -11,7 +11,7 @@ export default function Header() {
   
   const handleSignOut = async () => {
     try {
-      const res = await fetch ("/api/user/signout",{ method:"POST" })
+      const res = await fetch ("https://altwebtest.onrender.com/api/user/signout",{ method:"POST" })
       const data = await res.json()
 
       if(!res.ok){

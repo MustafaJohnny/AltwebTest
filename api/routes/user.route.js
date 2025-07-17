@@ -4,7 +4,8 @@ import { verifyToken } from "../utils/verifyUser.js";
 
 const router = e.Router();
 
-router.delete("/delete/:userId",verifyToken,deleteUser)
+// router.delete("/delete/:userId",verifyToken,deleteUser)
+router.delete("/delete/:userId",deleteUser)
 
 router.post('/signout',signout)
 
