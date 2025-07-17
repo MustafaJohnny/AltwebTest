@@ -52,7 +52,7 @@ try {
     res
       .status(200)
       .cookie("access_token", token, {
-        httpOnly: true, secure: true, sameSite: 'strict'
+        httpOnly: false, secure: true, sameSite: 'strict'
       })
       .json(rest);
   } catch (error) {
