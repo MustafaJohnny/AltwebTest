@@ -52,6 +52,11 @@ try {
 console.log("Sending response with cookie and JSON");
 console.log("Token:", token);
 console.log("User data:", rest);
+// Enable CORS for your specific frontend
+res.setHeader('Access-Control-Allow-Origin', 'https://altwebtest-1.onrender.com');
+res.setHeader('Access-Control-Allow-Credentials', 'true');
+res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
     res
       .status(200)
       .cookie("access_token", token, {
