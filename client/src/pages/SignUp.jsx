@@ -44,7 +44,7 @@ export default function SignUp() {
     }
     try {
       dispatch(signUpStart());
-      const response = await fetch("/api/auth/signup", {
+      const response = await fetch("https://altwebtest.onrender.com/api/auth/signup", {
         method: "POST",
         headers: { Accept: "application/json", "Content-type": "application/json" },
         body: JSON.stringify(formData),
