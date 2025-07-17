@@ -50,9 +50,6 @@ export default function SignUp() {
         body: JSON.stringify(formData),
         credentials:"include"
       });
-       console.log('response',response)
-       const text = await response.text();
-console.log('Raw response text:', text);
 
       const data = await response.json();
       console.log('data',data)
