@@ -15,7 +15,9 @@ export default function Users() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const res = await fetch(`https://altwebtest.onrender.com/api/user/getusers`);
+        const res = await fetch(`https://altwebtest.onrender.com/api/user/getusers`,{
+          credentials:"include"
+        });
         const data = await res.json();
         if (!res.ok) {
           toast.error("Error fetching users");
