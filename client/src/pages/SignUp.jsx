@@ -48,6 +48,7 @@ export default function SignUp() {
         method: "POST",
         headers: { Accept: "application/json", "Content-type": "application/json" },
         body: JSON.stringify(formData),
+        credentials:"include"
       });
        console.log('response',response)
       const data = await response.json();

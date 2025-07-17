@@ -22,6 +22,8 @@ export default function SignIn() {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify(formData),
+                credentials:"include"
+
       });
 
       const data = await response.json();
