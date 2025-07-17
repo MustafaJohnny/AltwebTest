@@ -51,6 +51,9 @@ export default function SignUp() {
         credentials:"include"
       });
        console.log('response',response)
+       const text = await response.text();
+console.log('Raw response text:', text);
+
       const data = await response.json();
       console.log('data',data)
       if (data.success === false) {
