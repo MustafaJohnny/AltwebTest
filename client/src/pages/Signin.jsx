@@ -18,7 +18,7 @@ export default function SignIn() {
     e.preventDefault();
     try {
       dispatch(signInStart());
-      const response = await fetch("/api/auth/signin", {
+      const response = await fetch("https://altwebtest.onrender.com/api/auth/signin", {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify(formData),
