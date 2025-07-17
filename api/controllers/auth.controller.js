@@ -5,7 +5,7 @@ import { errorHandler } from "../utils/error.js";
 
 export const signup = async (req, res, next) => {
   const { username, email, password, confirmPassword } = req.body;
-
+ console.log('request body',req.body)
   if (
     !username ||
     !email ||
@@ -48,7 +48,10 @@ try {
     );
     
     const { password: pass, ...rest } = newUser._doc;
-
+// Add this right before res.status(200)
+console.log("Sending response with cookie and JSON");
+console.log("Token:", token);
+console.log("User data:", rest);
     res
       .status(200)
       .cookie("access_token", token, {
