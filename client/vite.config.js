@@ -7,7 +7,7 @@ export default defineConfig({
     proxy:{
       '/api':{
       target:'https://altwebtest.onrender.com',
-      secure:false,
+      secure:true,
 
     },
   },
