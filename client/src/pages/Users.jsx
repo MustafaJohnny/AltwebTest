@@ -6,7 +6,6 @@ import DeleteUserPopup from "../components/DeleteUserPopup";
 
 export default function Users() {
   const [users, setUsers] = useState([]);
-  const [showMore, setShowMore] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const [userIdToDelete, setUserIdToDelete] = useState("");
 
@@ -25,9 +24,6 @@ export default function Users() {
         }
         if (res.ok) {
           setUsers(data.users);
-          if (data.users.length < 9) {
-            setShowMore(false);
-          }
         }
       } catch (error) {
         toast.error(error);
@@ -35,24 +31,7 @@ export default function Users() {
     };
     fetchUsers();
   }, [currentUser._id]);
-
-  const handleShowMore = async () => {
-    const startIndex = users.length;
-    try {
-      const res = await fetch(`/api/user/getusers?startIndex=${startIndex}`);
-      const data = await res.json();
-      console.log(data);
-      if (res.ok) {
-        setUsers((prev) => [...prev, ...data.users]);
-        if (data.users.length < 9) {
-          setShowMore(false);
-        }
-      }
-    } catch (error) {
-      toast.error(error);
-    }
-  };
-
+  
   const handleDeleteUser = async () => {
     try {
       const res = await fetch(`https://altwebtest.onrender.com/api/user/delete/${userIdToDelete}`, {
@@ -109,14 +88,6 @@ export default function Users() {
             </Table.Body>
           ))}
         </Table>
-        {showMore && (
-          <button
-            onClick={handleShowMore}
-            className="w-full text-teal-500 self-center text-sm py-7"
-          >
-            show more
-          </button>
-        )}
         <DeleteUserPopup
           isOpen={showModal}
           onDeleteUser={handleDeleteUser}
