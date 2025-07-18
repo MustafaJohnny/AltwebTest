@@ -12,12 +12,12 @@ export default function App() {
     <>
       <Header />
       <Routes>
-        <Route element={<NonPrivateRoute/>}>
+        <Route element={<NonPrivateRoute />}>
           <Route path="/" element={<SignUp />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/sign-in" element={<Signin />} />
-        <Route element={<PrivateRoute />}>
         </Route>
+        <Route element={<PrivateRoute />}>
           <Route path="/users" element={<Users />} />
         </Route>
       </Routes>
