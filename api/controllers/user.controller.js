@@ -23,8 +23,11 @@ export const signout = (req, res, next) => {
 
 export const getUsers = async (req, res, next) => {
   try {
-    
-    const allUsers = await User;
+    const allUsers = await User.find().map((user) => {
+      const { password, ...rest } = user._doc;
+      return rest;
+    });
+
     res.status(200).json({ users: allUsers });
   } catch (error) {
     next(error);
